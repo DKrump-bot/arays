@@ -3,11 +3,12 @@ public class ejercicio6 {
         //Busca un número en el array e indica en qué posición está, o -1 si no aparece.
         int[] numeros = {1,2,3,4,5,6,7,8,9,10};
         int numeroBuscar = 5;
-        int posicionNumero = -1;
+        boolean esta = false;
         for (int i = 0; i < numeros.length; i++){
             if (numeros[i] == numeroBuscar){
                 System.out.println("el numero esta en la posicion " + i);
-            } else if (i == numeros.length -1 && posicionNumero ==-1) {
+                esta = true;
+            } else if (i == numeros.length -1 && esta == false) {
                 System.out.println("El numero esta en la posicion -1");
             }
         }
