@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Ahorcado {
@@ -18,10 +19,12 @@ public class Ahorcado {
         String[] palabras = {"sol","casa","perro","limon","zapatos","planeta","guitarra","edificio","burbuja","esqueleto","cachivache","jazmin","xilofono","sanguijuela","desoxidorribonucleico" };
         Scanner input = new Scanner(System.in);
         int longitudPalabra = 0;
+        int j = 0;
         //char[] solucionSecreta = new char[];
         //char[] solucionUsuario = new char[];
         int palabraSeleccionada = 0;
         char[] solucionSecreta = new char[palabras[palabraSeleccionada].length()];
+        char letraAnadir = ' ';
         char[] solucionUsuario = new char[palabras[palabraSeleccionada].length()];
         System.out.println("Seleccione la palabra ");
 
@@ -41,8 +44,17 @@ public class Ahorcado {
         for (int i = 0; i < longitudPalabra; i++) {
             do {
 
-                solucionUsuario[i] = input.next().charAt(i);
-            }while (solucionUsuario[i] == '_');
+                //solucionUsuario[i] = input.next().charAt(i);
+                System.out.println("La palabra es " + Arrays.toString(solucionUsuario));
+                letraAnadir = input.next().charAt(0);
+                for (j = 0; j < longitudPalabra; j++) {
+                    if(letraAnadir == solucionSecreta[j]) {
+                        solucionUsuario[j] = letraAnadir;
+                    }
+
+                }
+            }while (solucionSecreta[j] == '_' );
+            System.out.println("Enorabuena tu palabra era " + Arrays.toString(solucionUsuario));
         }
     }
 }
